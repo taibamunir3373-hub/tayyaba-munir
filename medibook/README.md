@@ -337,13 +337,11 @@ http://localhost:3000             ← Dashboard
 <img width="1362" height="690" alt="dashboard 2" src="https://github.com/user-attachments/assets/677e82f3-f3d1-40d2-9f79-ff5e95f9adda" />
 
 <img width="1364" height="682" alt="patients" src="https://github.com/user-attachments/assets/2cfcd310-05bb-4d2e-8beb-37bfb609c2a0" />
-<img width="727" height="646" alt="add patients" src="https://github.com/user-attachments/assets/ecc56d32-04ae-4eef-a45d-55d0d98be814" />
-<img width="614" height="642" alt="add doctor" src="https://github.com/user-attachments/assets/d4f980f4-8188-43dd-ae59-b4ac216051f2" />
 
 <img width="627" height="641" alt="app" src="https://github.com/user-attachments/assets/41406e77-b741-4242-be61-fffed0dcd79f" />
-
+<img width="727" height="646" alt="add patients" src="https://github.com/user-attachments/assets/ecc56d32-04ae-4eef-a45d-55d0d98be814" />
 <img width="1136" height="623" alt="doc" src="https://github.com/user-attachments/assets/d7ad53f2-65f1-462c-875e-1281e867d7e9" />
-
+<img width="614" height="642" alt="add doctor" src="https://github.com/user-attachments/assets/d4f980f4-8188-43dd-ae59-b4ac216051f2" />
 <img width="1126" height="622" alt="appoint" src="https://github.com/user-attachments/assets/c0a6a643-ef0e-4b8a-b59b-dfc4fe22532c" />
 <img width="1365" height="692" alt="dark mode" src="https://github.com/user-attachments/assets/c12061a2-4e80-4752-a03b-9ebde4cf504c" />
 <img width="1203" height="675" alt="print slip" src="https://github.com/user-attachments/assets/fa3e43f6-48a1-44a6-816a-098d87fa5c0b" />
