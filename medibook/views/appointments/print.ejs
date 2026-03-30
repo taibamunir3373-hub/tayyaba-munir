@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Appointment Slip</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8f9fa; }
+    .slip { max-width: 600px; margin: 40px auto; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .slip-header { background: #0d6efd; color: white; padding: 30px; text-align: center; }
+    .slip-body { padding: 30px; }
+    .slip-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+    .slip-label { color: #6c757d; font-weight: 500; }
+    .slip-value { font-weight: 600; color: #333; }
+    .status-badge { padding: 6px 16px; border-radius: 20px; font-weight: 600; }
+    @media print {
+      body { background: white; }
+      .no-print { display: none; }
+      .slip { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slip">
+    <div class="slip-header">
+      <h2>&#9829; MediBook</h2>
+      <p class="mb-0">Doctor Appointment System</p>
+      <small>Appointment Slip</small>
+    </div>
+    <div class="slip-body">
+      <div class="slip-row">
+        <span class="slip-label">Patient Name</span>
+        <span class="slip-value"><%= appointment.patient.name %></span>
+      </div>
+      <div class="slip-row">
+        <span class="slip-label">Patient Phone</span>
+        <span class="slip-value"><%= appointment.patient.phone %></span>
+      </div>
+      <div class="slip-row">
+        <span class="slip-label">Doctor Name</span>
+        <span class="slip-value">Dr. <%= appointment.doctor.name %></span>
+      </div>
+      <div class="slip-row">
+        <span class="slip-label">Specialization</span>
+        <span class="slip-value"><%= appointment.doctor.specialization %></span>
+      </div>
+      <div class="slip-row">
+        <span class="slip-label">Consultation Fee</span>
+        <span class="slip-value">Rs. <%= appointment.doctor.fee %></span>
+      </div>
+      <div class="slip-row">
+        <span class="slip-label">Date</span>
+        <span class="slip-value"><%= new Date(appointment.date).toDateString() %></span>
+      </div>
+      <div class="slip-row">
+        <span class="slip-label">Time Slot</span>
+        <span class="slip-value"><%= appointment.timeSlot %></span>
+      </div>
+      <div class="slip-row">
+        <span class="slip-label">Status</span>
+        <span class="slip-value">
+          <% if(appointment.status === 'confirmed') { %>
+            <span class="status-badge" style="background:#d1fae5;color:#065f46">Confirmed</span>
+          <% } else if(appointment.status === 'cancelled') { %>
+            <span class="status-badge" style="background:#fee2e2;color:#991b1b">Cancelled</span>
+          <% } else { %>
+            <span class="status-badge" style="background:#fef3c7;color:#92400e">Pending</span>
+          <% } %>
+        </span>
+      </div>
+      <% if(appointment.notes) { %>
+      <div class="slip-row">
+        <span class="slip-label">Notes</span>
+        <span class="slip-value"><%= appointment.notes %></span>
+      </div>
+      <% } %>
+      <div class="text-center mt-4 no-print">
+        <button onclick="window.print()" class="btn btn-primary px-5">
+          <i class="bi bi-printer me-2"></i>Print Slip
+        </button>
+        <a href="/appointments" class="btn btn-outline-secondary ms-2">Back</a>
+      </div>
+      <div class="text-center mt-4 text-muted">
+        <small>Generated on <%= new Date().toDateString() %> | MediBook System</small>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<%- include('../partials/header') %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h3 class="fw-bold"><i class="bi bi-person-badge-fill me-2"></i>Doctors</h3>
+  <a href="/doctors/add" class="btn btn-success"><i class="bi bi-plus-circle me-1"></i> Add Doctor</a>
+</div>
+
+<div class="card p-4 mb-4">
+  <form method="GET" action="/doctors" class="d-flex gap-2">
+    <input type="text" name="search" value="<%= search %>" class="form-control" placeholder="Search by name or specialization...">
+    <button class="btn btn-outline-success">Search</button>
+    <a href="/doctors" class="btn btn-outline-secondary">Clear</a>
+  </form>
+</div>
+
+<div class="card">
+  <div class="table-responsive">
+    <table class="table table-hover mb-0">
+      <thead class="table-success">
+        <tr>
+          <th>#</th><th>Name</th><th>Specialization</th><th>Email</th><th>Phone</th><th>Fee</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (doctors.length === 0) { %>
+          <tr><td colspan="7" class="text-center text-muted py-4">No doctors found</td></tr>
+        <% } %>
+        <% doctors.forEach((d, i) => { %>
+          <tr>
+            <td><%= i+1 %></td>
+            <td><%= d.name %></td>
+            <td><span class="badge bg-success"><%= d.specialization %></span></td>
+            <td><%= d.email %></td>
+            <td><%= d.phone || '-' %></td>
+            <td>Rs. <%= d.fee || 0 %></td>
+            <td>
+              <a href="/doctors/edit/<%= d._id %>" class="btn btn-sm btn-warning me-1"><i class="bi bi-pencil"></i></a>
+              <form action="/doctors/delete/<%= d._id %>" method="POST" style="display:inline" onsubmit="return confirm('Delete this doctor?')">
+                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

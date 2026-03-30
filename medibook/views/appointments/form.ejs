@@ -1,0 +1,61 @@
+<%- include('../partials/header') %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h3 class="fw-bold"><%= appointment ? 'Edit Appointment' : 'Book Appointment' %></h3>
+  <a href="/appointments" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i> Back</a>
+</div>
+
+<div class="card p-4" style="max-width:600px">
+  <form action="/appointments/<%= appointment ? 'edit/' + appointment._id : 'add' %>" method="POST">
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Patient</label>
+      <select name="patient" class="form-select" required>
+        <option value="">Select Patient</option>
+        <% patients.forEach(p => { %>
+          <option value="<%= p._id %>" <%= appointment && appointment.patient && appointment.patient.toString() === p._id.toString() ? 'selected' : '' %>>
+            <%= p.name %>
+          </option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Doctor</label>
+      <select name="doctor" class="form-select" required>
+        <option value="">Select Doctor</option>
+        <% doctors.forEach(d => { %>
+          <option value="<%= d._id %>" <%= appointment && appointment.doctor && appointment.doctor.toString() === d._id.toString() ? 'selected' : '' %>>
+            <%= d.name %> - <%= d.specialization %>
+          </option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Date</label>
+      <input type="date" name="date" class="form-control" value="<%= appointment ? new Date(appointment.date).toISOString().split('T')[0] : '' %>" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Time Slot</label>
+      <select name="timeSlot" class="form-select" required>
+        <option value="">Select Time</option>
+        <% ['09:00 AM','10:00 AM','11:00 AM','12:00 PM','02:00 PM','03:00 PM','04:00 PM','05:00 PM'].forEach(t => { %>
+          <option <%= appointment && appointment.timeSlot === t ? 'selected' : '' %>><%= t %></option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Status</label>
+      <select name="status" class="form-select">
+        <option value="pending" <%= !appointment || appointment.status === 'pending' ? 'selected' : '' %>>Pending</option>
+        <option value="confirmed" <%= appointment && appointment.status === 'confirmed' ? 'selected' : '' %>>Confirmed</option>
+        <option value="cancelled" <%= appointment && appointment.status === 'cancelled' ? 'selected' : '' %>>Cancelled</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label class="form-label fw-semibold">Notes (Optional)</label>
+      <textarea name="notes" class="form-control" rows="2"><%= appointment ? appointment.notes : '' %></textarea>
+    </div>
+    <button type="submit" class="btn btn-warning text-white px-4"><%= appointment ? 'Update Appointment' : 'Book Appointment' %></button>
+  </form>
+</div>
+
+<%- include('../partials/footer') %>

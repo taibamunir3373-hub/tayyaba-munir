@@ -1,0 +1,64 @@
+<%- include('../partials/header') %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h3 class="fw-bold"><i class="bi bi-calendar-check-fill me-2"></i>Appointments</h3>
+  <a href="/appointments/add" class="btn btn-warning text-white"><i class="bi bi-plus-circle me-1"></i> Book Appointment</a>
+</div>
+
+<div class="card p-4 mb-4">
+  <form method="GET" action="/appointments" class="d-flex gap-2">
+    <select name="status" class="form-select">
+      <option value="">All Status</option>
+      <option <%= status === 'pending' ? 'selected' : '' %>>pending</option>
+      <option <%= status === 'confirmed' ? 'selected' : '' %>>confirmed</option>
+      <option <%= status === 'cancelled' ? 'selected' : '' %>>cancelled</option>
+    </select>
+    <button class="btn btn-outline-warning">Filter</button>
+    <a href="/appointments" class="btn btn-outline-secondary">Clear</a>
+  </form>
+</div>
+
+<div class="card">
+  <div class="table-responsive">
+    <table class="table table-hover mb-0">
+      <thead class="table-warning">
+        <tr>
+          <th>#</th><th>Patient</th><th>Doctor</th><th>Specialization</th><th>Date</th><th>Time Slot</th><th>Status</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (appointments.length === 0) { %>
+          <tr><td colspan="8" class="text-center text-muted py-4">No appointments found</td></tr>
+        <% } %>
+        <% appointments.forEach((a, i) => { %>
+          <tr>
+            <td><%= i+1 %></td>
+            <td><%= a.patient ? a.patient.name : '-' %></td>
+            <td><%= a.doctor ? a.doctor.name : '-' %></td>
+            <td><%= a.doctor ? a.doctor.specialization : '-' %></td>
+            <td><%= new Date(a.date).toLocaleDateString() %></td>
+            <td><%= a.timeSlot %></td>
+            <td>
+              <% if (a.status === 'confirmed') { %>
+                <span class="badge bg-success">Confirmed</span>
+              <% } else if (a.status === 'cancelled') { %>
+                <span class="badge bg-danger">Cancelled</span>
+              <% } else { %>
+                <span class="badge bg-warning text-dark">Pending</span>
+              <% } %>
+            </td>
+            <td>
+              <a href="/appointments/edit/<%= a._id %>" class="btn btn-sm btn-warning me-1"><i class="bi bi-pencil"></i></a>
+              <a href="/appointments/print/<%= a._id %>" target="_blank" class="btn btn-sm btn-info text-white me-1"><i class="bi bi-printer"></i></a>
+              <form action="/appointments/delete/<%= a._id %>" method="POST" style="display:inline" onsubmit="return confirm('Cancel this appointment?')">
+                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
