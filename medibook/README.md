@@ -32,7 +32,9 @@
 The system includes secure user authentication, role-based access, real-time dashboard analytics, and printable appointment slips — making it a production-ready healthcare solution.
 
 ---
-Video of my project :
+
+Demo Video of my project :
+
 https://drive.google.com/file/d/1FWDBP7jYJ_s2fEuSLRnm76XHFEXmnHTl/view?usp=sharing
 
 ## ✨ Features
