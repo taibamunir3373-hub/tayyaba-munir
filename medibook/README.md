@@ -345,6 +345,12 @@ Redirects to login after successful account creation.
 
 <img width="477" height="630" alt="sinup" src="https://github.com/user-attachments/assets/5be7393e-b003-4a6a-941f-4b76d388c4e3" />
 
+Authentication 
+
+<img width="466" height="617" alt="Invalid email  error" src="https://github.com/user-attachments/assets/e00e5fef-9d23-4d42-b354-bea55af37995" />
+
+
+
 ### 3. Login Page
 Secure login form with email and password.
 Uses bcryptjs for password verification and express-session for auth.
