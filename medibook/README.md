@@ -331,6 +331,7 @@ http://localhost:3000             ← Dashboard
 ### 1. Landing Page
 The professional landing page with hero section, feature cards, and stats.
 Shows MediBook branding, Get Started and Login buttons.
+
 <img width="1355" height="687" alt="landing page" src="https://github.com/user-attachments/assets/57187681-111a-47cc-ab2a-bd74531e5a73" />
 <img width="1297" height="685" alt="landing 2" src="https://github.com/user-attachments/assets/b59d05b0-ad5d-4a1c-8e92-ac2af0dfcefa" />
 <img width="1348" height="648" alt="landing 3" src="https://github.com/user-attachments/assets/310c708e-fe3d-4196-86a4-8c2480cee315" />
@@ -338,12 +339,27 @@ Shows MediBook branding, Get Started and Login buttons.
 ### 3. Login Page
 Secure login form with email and password.
 Uses bcryptjs for password verification and express-session for auth.
+
 |<img width="511" height="621" alt="login" src="https://github.com/user-attachments/assets/40caf5e8-6b3a-4c07-9da7-ce839802ae9c" />
 
+### 4. Dashboard
+Main dashboard showing:
+- Total Patients, Doctors, Appointments, and Pending counts
+- Doughnut chart for appointment status (Pending/Confirmed/Cancelled)
+- Bar chart showing monthly appointments for last 6 months
+- Recent appointments table with patient and doctor names
+- Quick action buttons for adding patients, doctors, appointments
+  
 <img width="1366" height="698" alt="dashboard 1" src="https://github.com/user-attachments/assets/82b75d28-e9d3-4c50-b819-23670df820b2" />
 
 <img width="1362" height="690" alt="dashboard 2" src="https://github.com/user-attachments/assets/677e82f3-f3d1-40d2-9f79-ff5e95f9adda" />
 
+### 5. Patient Management
+- Patient list with search functionality
+- Columns: Name, Phone, Age, Gender, Blood Group, Allergies
+- Add/Edit/Delete operations
+- Medical history form with blood group and allergies fields
+- 
 <img width="1364" height="682" alt="patients" src="https://github.com/user-attachments/assets/2cfcd310-05bb-4d2e-8beb-37bfb609c2a0" />
 
 <img width="627" height="641" alt="app" src="https://github.com/user-attachments/assets/41406e77-b741-4242-be61-fffed0dcd79f" />
