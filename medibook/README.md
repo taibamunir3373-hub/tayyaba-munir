@@ -332,6 +332,7 @@ http://localhost:3000             ← Dashboard
 The professional landing page with hero section, feature cards, and stats.
 Shows MediBook branding, Get Started and Login buttons.
 
+
 <img width="1355" height="687" alt="landing page" src="https://github.com/user-attachments/assets/57187681-111a-47cc-ab2a-bd74531e5a73" />
 <img width="1297" height="685" alt="landing 2" src="https://github.com/user-attachments/assets/b59d05b0-ad5d-4a1c-8e92-ac2af0dfcefa" />
 <img width="1348" height="648" alt="landing 3" src="https://github.com/user-attachments/assets/310c708e-fe3d-4196-86a4-8c2480cee315" />
@@ -371,6 +372,7 @@ Main dashboard showing:
 - Doctor profile shows stats and recent patients
   
 <img width="1136" height="623" alt="doc" src="https://github.com/user-attachments/assets/d7ad53f2-65f1-462c-875e-1281e867d7e9" />
+
 <img width="614" height="642" alt="add doctor" src="https://github.com/user-attachments/assets/d4f980f4-8188-43dd-ae59-b4ac216051f2" />
 
 ### 7. Appointment Management
@@ -380,11 +382,22 @@ Main dashboard showing:
 - Printer icon to generate appointment slip
   
 <img width="1126" height="622" alt="appoint" src="https://github.com/user-attachments/assets/c0a6a643-ef0e-4b8a-b59b-dfc4fe22532c" />
+
 <img width="627" height="641" alt="app" src="https://github.com/user-attachments/assets/41406e77-b741-4242-be61-fffed0dcd79f" />
 
-
-<img width="1365" height="692" alt="dark mode" src="https://github.com/user-attachments/assets/c12061a2-4e80-4752-a03b-9ebde4cf504c" />
+### 8. Appointment Slip
+- Printable appointment slip with patient and doctor details
+- Shows date, time slot, fee, and status
+- Print button using window.print()
+  
 <img width="1203" height="675" alt="print slip" src="https://github.com/user-attachments/assets/fa3e43f6-48a1-44a6-816a-098d87fa5c0b" />
+
+### 9. Dark Mode
+- Toggle dark mode from topbar
+- All pages support dark mode including tables and forms
+  
+<img width="1365" height="692" alt="dark mode" src="https://github.com/user-attachments/assets/c12061a2-4e80-4752-a03b-9ebde4cf504c" />
+
 
 ### 10. User Profile & Change Password
 - Logged-in user profile with name and role
