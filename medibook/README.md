@@ -328,10 +328,16 @@ http://localhost:3000             ← Dashboard
 ## 📸 Screenshots
 
 | Page | Description |
+### 1. Landing Page
+The professional landing page with hero section, feature cards, and stats.
+Shows MediBook branding, Get Started and Login buttons.
 <img width="1355" height="687" alt="landing page" src="https://github.com/user-attachments/assets/57187681-111a-47cc-ab2a-bd74531e5a73" />
 <img width="1297" height="685" alt="landing 2" src="https://github.com/user-attachments/assets/b59d05b0-ad5d-4a1c-8e92-ac2af0dfcefa" />
 <img width="1348" height="648" alt="landing 3" src="https://github.com/user-attachments/assets/310c708e-fe3d-4196-86a4-8c2480cee315" />
 
+### 3. Login Page
+Secure login form with email and password.
+Uses bcryptjs for password verification and express-session for auth.
 |<img width="511" height="621" alt="login" src="https://github.com/user-attachments/assets/40caf5e8-6b3a-4c07-9da7-ce839802ae9c" />
 
 <img width="1366" height="698" alt="dashboard 1" src="https://github.com/user-attachments/assets/82b75d28-e9d3-4c50-b819-23670df820b2" />
