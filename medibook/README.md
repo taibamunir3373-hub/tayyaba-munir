@@ -339,6 +339,12 @@ Shows MediBook branding, Get Started and Login buttons.
 <img width="1297" height="685" alt="landing 2" src="https://github.com/user-attachments/assets/b59d05b0-ad5d-4a1c-8e92-ac2af0dfcefa" />
 <img width="1348" height="648" alt="landing 3" src="https://github.com/user-attachments/assets/310c708e-fe3d-4196-86a4-8c2480cee315" />
 
+### 2. Signup Page
+New user registration form with name, email, and password fields.
+Redirects to login after successful account creation.
+
+<img width="477" height="630" alt="sinup" src="https://github.com/user-attachments/assets/5be7393e-b003-4a6a-941f-4b76d388c4e3" />
+
 ### 3. Login Page
 Secure login form with email and password.
 Uses bcryptjs for password verification and express-session for auth.
